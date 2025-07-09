@@ -22,7 +22,8 @@ As shown in 1-install hashcat.jpg, Hashcat was already the newest version (6.2.6
 Before attempting to crack any hashes, a wordlist is essential for dictionary attacks. Hashcat will hash each word in this list and compare it to the target hash.
 
 Download rockyou.txt:
-I navigated to the ~/Documents/Masterschool directory, as seen in 5-ubication.png. In Kali Linux, rockyou.txt is typically pre-installed, so I confirmed its presence in this directory.
+In Kali Linux, rockyou.txt is typically pre-installed. But before I knew this I had already moved the list (already given) from my computer to my VM, using Drive.
+I navigated to the ~/Documents/Masterschool directory, as seen in 5-ubication.png. , so I confirmed its presence in this directory.
 
 cd ~/Documents/Masterschool
 ls
