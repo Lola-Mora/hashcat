@@ -1,5 +1,4 @@
-Cracking Hashes with Hashcat: A Step-by-Step Guide
-
+# Cracking Hashes with Hashcat: A Step-by-Step Guide
 This guide details the process of cracking two different hashes using Hashcat on a Linux environment, leveraging a wordlist for dictionary attacks.
 
 1. Environment Setup: Installing Hashcat
@@ -47,7 +46,7 @@ To verify the content, I used cat:
 
 
 cat HASH1
-# Output: fde24d80ac225175b4be937fdb1fab97
+# Output: HASH1 fde24d80ac225175b4be937fdb1fab97
 Execute Hashcat Command:
 Now, with the hash file and wordlist ready, I executed the Hashcat command to start the cracking process.
 
@@ -82,7 +81,7 @@ I verified the content:
 
 
 cat HASH2
-# Output: 2d354a2fb4066717f86d5a5f633e14f8538018c3
+# Output: HASH2 2d354a2fb4066717f86d5a5f633e14f8538018c3
 The ls command also confirms both hash files and the wordlist are in the directory (6-hash2-cat.png).
 
 Execute Hashcat Command:
