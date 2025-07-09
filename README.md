@@ -8,26 +8,21 @@ First, ensure your Linux system is up to date and then install Hashcat.
 Update Package Manager:
 To begin, I updated my system's package manager to ensure all existing packages were current and to fetch the latest information on available software.
 
-Bash
-
 sudo apt update
 This command refreshes the package lists from the repositories.
 
 Install Hashcat:
 Next, I installed Hashcat, a powerful open-source password recovery tool.
 
-Bash
-
 sudo apt install hashcat
 As shown in 1-install hashcat.jpg, Hashcat was already the newest version (6.2.6+ds2-1bl), so no installation was actually performed, but the system confirmed its presence.
+
 
 2. Preparing the Wordlist: rockyou.txt
 Before attempting to crack any hashes, a wordlist is essential for dictionary attacks. Hashcat will hash each word in this list and compare it to the target hash.
 
 Download rockyou.txt:
 I navigated to the ~/Documents/Masterschool directory, as seen in 5-ubication.png. In Kali Linux, rockyou.txt is typically pre-installed, so I confirmed its presence in this directory.
-
-Bash
 
 cd ~/Documents/Masterschool
 ls
@@ -43,21 +38,18 @@ Result: The tool identified it as MD5 or MD4. Hashcat uses specific mode numbers
 Create Hash File:
 To provide Hashcat with the target hash, I created a file named HASH1 and saved the hash within it.
 
-Bash
 
 touch HASH1
 nano HASH1
 Inside nano, I pasted fde24d80ac225175b4be937fdb1fab97. After pasting, I pressed CTRL + X, then Y to save, and Enter to confirm the filename, as depicted in 2-hash1-nano.png.
 To verify the content, I used cat:
 
-Bash
 
 cat HASH1
 # Output: fde24d80ac225175b4be937fdb1fab97
 Execute Hashcat Command:
 Now, with the hash file and wordlist ready, I executed the Hashcat command to start the cracking process.
 
-Bash
 
 hashcat -m 0 -a 0 HASH1 rockyou.txt
 -m 0: This flag specifies the hash type. 0 corresponds to MD5.
@@ -81,14 +73,12 @@ Result: The tool identified it as SHA1 (or SHA 128). For SHA1, Hashcat mode 100 
 Create Hash File:
 I created a new file named HASH2 to store the second hash.
 
-Bash
 
 touch HASH2
 nano HASH2
 Inside nano, I pasted 2d354a2fb4066717f86d5a5f633e14f8538018c3. I then saved and exited.
 I verified the content:
 
-Bash
 
 cat HASH2
 # Output: 2d354a2fb4066717f86d5a5f633e14f8538018c3
@@ -97,7 +87,6 @@ The ls command also confirms both hash files and the wordlist are in the directo
 Execute Hashcat Command:
 Finally, I executed Hashcat for the second hash.
 
-Bash
 
 hashcat -m 100 -a 0 HASH2 rockyou.txt
 -m 100: This flag specifies the hash type as SHA1.
